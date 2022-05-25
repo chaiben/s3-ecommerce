@@ -114,6 +114,28 @@ function calculateTotal() {
 function generateCart() {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
+    cart = [];
+    for(let i=0; i < cartList.length; i++){
+        let productExists = false;
+        // Check if the element already exist in the cart array
+        for( let j=0; j < cart.length; j++){
+            if(cartList[i].id == cart[j].id){
+                // Product already exists
+                // Increment the quantitiy value
+                cart[j].quantity++;
+                productExists = true;
+                break; // Quit this for
+            }
+        }
+        if(productExists == true)
+            continue; // Quit this for
+        // If we didn't find any element we create it
+        let p = cartList[i];
+        p.quantity = 1;
+        cart.push(p);
+    }
+    console.log('Cart', cart);
+    return true;
 }
 
 // Exercise 5
