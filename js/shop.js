@@ -7,7 +7,7 @@ var products = [
         type: 'grocery',
         offer: {
             number: 3,
-            percent: 20
+            percent: 4.76
         }
     },
     {
@@ -23,7 +23,7 @@ var products = [
         type: 'grocery',
         offer: {
             number: 10,
-            percent: 30
+            percent: 33.33
         }
     },
     {
@@ -78,6 +78,8 @@ function buy(id) {
         if(id == products[i].id){
             // 2. Add found product to the cartList array
             cartList.push(products[i]);
+            generateCart();
+            applyPromotionsCart()
             calculateTotal();
             log('Cart List', cartList);
             return true;
@@ -101,8 +103,11 @@ function calculateTotal() {
     total = 0;
 
     // Add each value to the total
-    for(let i = 0; i<cartList.length; i++){
-        total = total + cartList[i].price;
+    for(let i = 0; i<cart.length; i++){
+        if(cart[i].subtotalWithDiscount !== undefined)
+            total = total + cart[i].subtotalWithDiscount;
+        else
+            total = total + cart[i].subtotal;
     }
     total = Math.round(total*100)/100;
     // Show the result
@@ -121,9 +126,9 @@ function generateCart() {
         for( let j=0; j < cart.length; j++){
             if(cartList[i].id == cart[j].id){
                 // Product already exists
-                // Increment the quantitiy value
+                // Increment the quantity value
                 cart[j].quantity++;
-                cart[j].subtotal = cartList[i].price*cart[j].quantity;
+                cart[j].subtotal = Math.round(100*cartList[i].price*cart[j].quantity)/100;
                 productExists = true;
                 break; // Quit this for
             }
@@ -141,8 +146,17 @@ function generateCart() {
 }
 
 // Exercise 5
+
+/* This function return the product price with discount. Return false if there are any discount */
 function applyPromotionsCart() {
-    // Apply promotions to each item in the array "cart"
+    for (let i = 0; i < cart.length; i++) {
+        // Apply promotions to each item in the array "cart"
+        if(cart[i].offer === undefined)
+            continue;
+        if(cart[i].quantity >= cart[i].offer.number){
+            cart[i].subtotalWithDiscount = Math.round(100*cart[i].quantity*cart[i].price*(1-cart[i].offer.percent/100))/100;
+        }
+    }
 }
 
 // Exercise 6
