@@ -104,7 +104,7 @@ function calculateTotal() {
     for(let i = 0; i<cartList.length; i++){
         total = total + cartList[i].price;
     }
-
+    total = Math.round(total*100)/100;
     // Show the result
     log('Total', total);
     return true;
@@ -123,6 +123,7 @@ function generateCart() {
                 // Product already exists
                 // Increment the quantitiy value
                 cart[j].quantity++;
+                cart[j].subtotal = cartList[i].price*cart[j].quantity;
                 productExists = true;
                 break; // Quit this for
             }
@@ -132,6 +133,7 @@ function generateCart() {
         // If we didn't find any element we create it
         let p = cartList[i];
         p.quantity = 1;
+        p.subtotal = cartList[i].price;
         cart.push(p);
     }
     log('Cart', cart);
