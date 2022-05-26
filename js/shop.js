@@ -79,7 +79,7 @@ function buy(id) {
             // 2. Add found product to the cartList array
             cartList.push(products[i]);
             calculateTotal();
-            console.log('Cart List', cartList);
+            log('Cart List', cartList);
             return true;
         }
     }
@@ -90,8 +90,8 @@ function buy(id) {
 function cleanCart() {
     cartList = [];
     total = 0;
-    console.log('Cart List', cartList);
-    console.log('Total', total);
+    log('Cart List', cartList);
+    log('Total', total);
     return true;
 }
 
@@ -106,7 +106,7 @@ function calculateTotal() {
     }
 
     // Show the result
-    console.log('Total', total);
+    log('Total', total);
     return true;
 }
 
@@ -134,7 +134,7 @@ function generateCart() {
         p.quantity = 1;
         cart.push(p);
     }
-    console.log('Cart', cart);
+    log('Cart', cart);
     return true;
 }
 
@@ -165,6 +165,6 @@ function removeFromCart(id) {
 }
 
 function open_modal(){
-	console.log("Open Modal");
+	log("Open Modal");
 	printCart();
 }
