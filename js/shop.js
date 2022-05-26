@@ -81,6 +81,7 @@ function buy(id) {
             generateCart();
             applyPromotionsCart()
             calculateTotal();
+            printCart()
             log('Cart List', cartList);
             return true;
         }
@@ -91,7 +92,9 @@ function buy(id) {
 // Exercise 2
 function cleanCart() {
     cartList = [];
+    cart=[];
     total = 0;
+    printCart();
     log('Cart List', cartList);
     log('Total', total);
     return true;
@@ -160,8 +163,32 @@ function applyPromotionsCart() {
 }
 
 // Exercise 6
+function printHTML(cart){
+    let html = '';
+    html += '<tr>';
+    html += '    <th scope="row">' + cart.name + '</th>';
+    html += '    <td>$' + cart.price + '</td>';
+    html += '    <td>' + cart.quantity + '</td>';
+    html += '    <td>$' + cart.subtotal + '</td>';
+    html += '</tr>';
+    return html;
+}
+
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    let cartHTML = '';
+    let countProduct = 0;
+    if (cart.length == 0){
+        cartHTML = '<tr><th scope="row" colspan=4 class="text-center pt-5 pb-5" >Empty cart</th></tr>';
+    } else {    
+        for (let i = 0; i < cart.length; i++) {
+            cartHTML = cartHTML + printHTML(cart[i]);
+            countProduct += cart[i].quantity;
+        }
+    }
+    document.getElementById('cart_list').innerHTML = cartHTML;
+    document.getElementById('total_price').innerHTML = total;
+    document.getElementById('count_product').innerHTML = countProduct;
 }
 
 
