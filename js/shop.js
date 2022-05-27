@@ -210,7 +210,7 @@ function addToCart(id) {
                 if(id == cart[j].id){
                     // Update quantitiy and subtotal
                     cart[j].quantity++;
-                    cart[j].subtotal = Math.round(100*cartList[i].price*cart[j].quantity)/100;                   
+                    cart[j].subtotal = Math.round(100*products[i].price*cart[j].quantity)/100;                   
                     // Set flag to tell this is an existing product
                     productExists = true;
                     break;
@@ -230,8 +230,30 @@ function addToCart(id) {
 
 // Exercise 9
 function removeFromCart(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
+    // Remove from cartList
+    for (let i = 0; i < cartList.length; i++) {
+        if(cartList[i].id == id){
+            cartList.splice(i,1);
+            break;
+        } 
+    }
+    // Remove from cart
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == id) {
+            cart[i].quantity--;
+            if (cart[i].quantity == 0) {
+                cart.splice(i,1);
+                break; 
+            }
+            cart[i].subtotal = Math.round(100 * cart[i].price * cart[i].quantity)/100;
+            delete(cart[i].subtotalWithDiscount);
+            break;
+        } 
+    }
+
+    // Update promotions, calculate totals and refresh Cart info.
+    open_modal();
+    document.getElementById('count_product').innerHTML = cartList.length;
 }
 
 function open_modal(){
