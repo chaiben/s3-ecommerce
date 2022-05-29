@@ -1,67 +1,133 @@
 // If you have time, you can move this variable "products" to a json or js file and load the data in this js. It will look more professional
 var products = [
-   {
+    {
         id: 1,
-        name: 'cooking oil',
-        price: 10.5,
-        type: 'grocery',
+        name: 'Xarel·lo',
+        image: '/images/wines/xarello.png',
+        price: 7.2,
+        winery: 'miquel-jane',
         offer: {
             number: 3,
-            percent: 4.76
+            percent: 10
         }
-    },
-    {
+   },
+   {
         id: 2,
-        name: 'Pasta',
-        price: 6.25,
-        type: 'grocery'
-    },
-    {
-        id: 3,
-        name: 'Instant cupcake mixture',
-        price: 5,
-        type: 'grocery',
+        name: 'Syrah',
+        image: '/images/wines/syrah.png',
+        price: 9.2,
+        winery: 'miquel-jane',
         offer: {
             number: 10,
-            percent: 33.33
+            percent: 20
         }
-    },
-    {
+   },
+   {
+        id: 3,
+        name: 'Classic Penedès',
+        image: '/images/wines/classic-penedes.png',
+        price: 12,
+        winery: 'miquel-jane'
+   },
+   {
         id: 4,
-        name: 'All-in-one',
-        price: 260,
-        type: 'beauty'
-    },
-    {
+        name: 'Ancestral',
+        image: '/images/wines/ancestral.png',
+        price: 16.45,
+        winery: 'suriol'
+   },
+   {
         id: 5,
-        name: 'Zero Make-up Kit',
-        price: 20.5,
-        type: 'beauty'
-    },
-    {
+        name: 'Bancals',
+        image: '/images/wines/bancals.png',
+        price: 16.6,
+        winery: 'suriol'
+   },
+   {
         id: 6,
-        name: 'Lip Tints',
-        price: 12.75,
-        type: 'beauty'
-    },
-    {
+        name: 'Brut Nature',
+        image: '/images/wines/brut-nature.png',
+        price: 9.9,
+        winery: 'suriol'
+   },
+   {
         id: 7,
-        name: 'Lawn Dress',
-        price: 15,
-        type: 'clothes'
-    },
-    {
+        name: 'Donzella',
+        image: '/images/wines/donzella.png',
+        price: 9.9,
+        winery: 'suriol'
+   },
+   {
         id: 8,
-        name: 'Lawn-Chiffon Combo',
-        price: 19.99,
-        type: 'clothes'
-    },
-    {
+        name: 'Sang De Drac',
+        image: '/images/wines/sang-de-drac.png',
+        price: 11.9,
+        winery: 'suriol'
+   },
+   {
         id: 9,
-        name: 'Toddler Frock',
-        price: 9.99,
-        type: 'clothes'
-    }
+        name: 'Matarò',
+        image: '/images/wines/mataro.png',
+        price: 16.6,
+        winery: 'suriol'
+   },
+   {
+        id: 10,
+        name: 'Picapoll Cent·Kat',
+        image: '/images/wines/picapoll.png',
+        price: 10.05,
+        winery: 'grau-i-grau'
+   },
+   {
+        id: 11,
+        name: 'Sensvs',
+        image: '/images/wines/sensvs.png',
+        price: 12.3,
+        winery: 'grau-i-grau'
+   },
+   {
+        id: 12,
+        name: 'Maria Ganxa',
+        image: '/images/wines/mariaganxa.png',
+        price: 9.9,
+        winery: 'pascona'
+   },
+   {
+        id: 13,
+        name: 'Lo Pare',
+        image: '/images/wines/lo-pare.png',
+        price: 25.9,
+        winery: 'pascona'
+   },
+   {
+        id: 14,
+        name: 'Pascona Classic',
+        image: '/images/wines/pascona-classic.png',
+        price: 12.9,
+        winery: 'pascona'
+   },
+   {
+        id: 15,
+        name: 'Cepell Blanc',
+        image: '/images/wines/cepell-blanc.png',
+        price: 6.6,
+        winery: 'eudald'
+   },
+   {
+        id: 16,
+        name: 'Avi Ton',
+        image: '/images/wines/avi-ton.png',
+        price: 22.5,
+        winery: 'eudald'
+   },
+   {
+        id: 17,
+        name: 'Innat',
+        image: '/images/wines/innat.png',
+        price: 13.2,
+        winery: 'eudald'
+   },
+   
 ]
 // Array with products (objects) added directly with push(). Products in this array are repeated.
 var cartList = [];
@@ -168,9 +234,9 @@ function printHTML(cart){
     let html = '';
     html += '<tr>';
     html += '    <th scope="row">' + cart.name + '</th>';
-    html += '    <td>$' + cart.price + '</td>';
+    html += '    <td>' + currency(cart.price) + '</td>';
     html += '    <td>' + cart.quantity + '</td>';
-    html += '    <td>$' + subtotal + '</td>';
+    html += '    <td>' + currency(subtotal) + '</td>';
     html += '</tr>';
     return html;
 }
@@ -186,7 +252,7 @@ function printCart() {
         }
     }
     document.getElementById('cart_list').innerHTML = cartHTML;
-    document.getElementById('total_price').innerHTML = total;
+    document.getElementById('total_price').innerHTML = currency(total);
 }
 
 

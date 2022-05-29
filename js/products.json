@@ -1,0 +1,129 @@
+[
+    {
+        "id" : 1,
+        "name" : "Xarel·lo",
+        "image" : "/images/wines/xarello.png",
+        "price" : 7.2,
+        "winery" : "miquel-jane",
+        "offer" : {
+            "number" : 3,
+            "percent" : 10
+        }
+   },
+   {
+        "id" : 2,
+        "name" : "Syrah",
+        "image" : "/images/wines/syrah.png",
+        "price" : 9.2,
+        "winery" : "miquel-jane",
+        "offer" : {
+            "number" : 10,
+            "percent" : 20
+        }
+   },
+   {
+        "id" : 3,
+        "name" : "Classic Penedès",
+        "image" : "/images/wines/classic-penedes.png",
+        "price" : 12,
+        "winery" : "miquel-jane"
+   },
+   {
+        "id" : 4,
+        "name" : "Ancestral",
+        "image" : "/images/wines/ancestral.png",
+        "price" : 16.45,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 5,
+        "name" : "Bancals",
+        "image" : "/images/wines/bancals.png",
+        "price" : 16.6,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 6,
+        "name" : "Brut Nature",
+        "image" : "/images/wines/brut-nature.png",
+        "price" : 9.9,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 7,
+        "name" : "Donzella",
+        "image" : "/images/wines/donzella.png",
+        "price" : 9.9,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 8,
+        "name" : "Sang De Drac",
+        "image" : "/images/wines/sang-de-drac.png",
+        "price" : 11.9,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 9,
+        "name" : "Matarò",
+        "image" : "/images/wines/mataro.png",
+        "price" : 16.6,
+        "winery" : "suriol"
+   },
+   {
+        "id" : 10,
+        "name" : "Picapoll Cent·Kat",
+        "image" : "/images/wines/picapoll.png",
+        "price" : 10.05,
+        "winery" : "grau-i-grau"
+   },
+   {
+        "id" : 11,
+        "name" : "Sensvs",
+        "image" : "/images/wines/sensvs.png",
+        "price" : 12.3,
+        "winery" : "grau-i-grau"
+   },
+   {
+        "id" : 12,
+        "name" : "Maria Ganxa",
+        "image" : "/images/wines/mariaganxa.png",
+        "price" : 9.9,
+        "winery" : "pascona"
+   },
+   {
+        "id" : 13,
+        "name" : "Lo Pare",
+        "image" : "/images/wines/lo-pare.png",
+        "price" : 25.9,
+        "winery" : "pascona"
+   },
+   {
+        "id" : 14,
+        "name" : "Pascona Classic",
+        "image" : "/images/wines/pascona-classic.png",
+        "price" : 12.9,
+        "winery" : "pascona"
+   },
+   {
+        "id" : 15,
+        "name" : "Cepell Blanc",
+        "image" : "/images/wines/cepell-blanc.png",
+        "price" : 6.6,
+        "winery" : "eudald"
+   },
+   {
+        "id" : 16,
+        "name" : "Avi Ton",
+        "image" : "/images/wines/avi-ton.png",
+        "price" : 22.5,
+        "winery" : "eudald"
+   },
+   {
+        "id" : 17,
+        "name" : "Innat",
+        "image" : "/images/wines/innat.png",
+        "price" : 13.2,
+        "winery" : "eudald"
+   }   
+]

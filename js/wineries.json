@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Miquel Jané",
+        "image" : "/images/winery/MJ.png",
+        "winery" : "miquel-jane"
+    },
+    {
+        "name" : "Suriol",
+        "image" : "/images/winery/suriol.png",
+        "winery" : "suriol"
+    },
+    {
+        "name" : "Grau i Grau",
+        "image" : "/images/winery/grau-i-grau.png",
+        "winery" : "grau-i-grau"
+    },
+    {
+        "name" : "Pascona",
+        "image" : "/images/winery/pascona.png",
+        "winery" : "pascona"
+    },
+    {
+        "name" : "Eudald",
+        "image" : "/images/winery/eudald.png",
+        "winery" : "eudald"
+    }
+]
